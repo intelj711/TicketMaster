@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/Faye/TitanProject/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2698415.index
+2797157977.index
+1234244087.index
+1029637550.index
+4268110666.index
+1537158047.index
