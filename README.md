@@ -1,0 +1,8 @@
+# TicketMaster
+• The project aims to use personalization to improve ticket search and recommendation
+• Created Java servlets with RESTful APIs to handle HTTP requests and responses
+• Built relational and NoSQL databases (MySQL, MongoDB) to capture event data from TicketMaster
+API
+• Designed algorithms (e.g., content-based recommendation) to improve event recommendation based
+on search history and favorite records)
+• Deployed server to Amazon EC2 to handle 150 queries per second tested by Apache JMeter.
