@@ -182,7 +182,8 @@
            activeBtn('nearby-btn');
   
            // The request parameters
-           var url = 'http://www.mocky.io/v2/5a24621d2e0000570f83bf98';
+//           var url = 'http://www.mocky.io/v2/5a24621d2e0000570f83bf98';
+           var url = './search';
            var params = 'user_id=' + user_id + '&lat=' + lat + '&lon=' + lng;
            var req = JSON.stringify({});
   
@@ -214,7 +215,8 @@
            activeBtn('fav-btn');
   
            // The request parameters
-           var url = 'http://www.mocky.io/v2/5a2462462e0000570f83bf99';
+//           var url = 'http://www.mocky.io/v2/5a2462462e0000570f83bf99';
+           var url = './history';
            var params = 'user_id=' + user_id;
            var req = JSON.stringify({});
   
@@ -233,6 +235,7 @@
                showErrorMessage('Cannot load favorite items.');
            });
        }
+
   
        /**
         * API #3 Load recommended items API end point: [GET]
@@ -244,7 +247,6 @@
            // The request parameters
            var url = 'http://www.mocky.io/v2/5a2462902e0000011083bf9b';
            var params = 'user_id=' + user_id + '&lat=' + lat + '&lon=' + lng;
-  
            var req = JSON.stringify({});
   
            // display loading message
@@ -286,7 +288,8 @@
            var favorite = li.dataset.favorite !== 'true';
   
            // The request parameters
-           var url = 'http://www.mocky.io/v2/5a2462462e0000570f83bf99';
+//           var url = 'http://www.mocky.io/v2/5a2462462e0000570f83bf99';
+           var url = './history';
            var req = JSON.stringify({
                user_id : user_id,
                favorite : [ item_id ]

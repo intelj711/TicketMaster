@@ -1,0 +1,7 @@
+<classpath>
+  <container id="Titan!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="/Users/Faye/TitanProject/Titan/WebContent/WEB-INF/lib/mongo-java-driver-3.4.1.jar">
+      <source-attachment-path>/Titan/WebContent/WEB-INF/lib/mongo-java-driver-3.4.1-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

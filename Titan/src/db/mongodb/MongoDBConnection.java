@@ -3,15 +3,15 @@ package db.mongodb;
 // This line needs manual import.
 import static com.mongodb.client.model.Filters.eq;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.bson.Document;
 
-import com.mongodb.Block;
+//import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
@@ -66,8 +66,7 @@ public class MongoDBConnection implements DBConnection {
 //	   }
 //	)
 	public void setFavoriteItems(String userId, List<String> itemIds) {
-		db.getCollection("users").updateOne(new Document("user_id", userId),
-				new Document("$push", new Document("favorite", new Document("$each", itemIds))));
+		db.getCollection("users").updateOne(new Document("user_id", userId), new Document("$push", new Document("favorite", new Document("$each", itemIds))));
 	}
 
 	@Override
@@ -84,8 +83,7 @@ public class MongoDBConnection implements DBConnection {
 //	   }
 //	)
 	public void unsetFavoriteItems(String userId, List<String> itemIds) {
-		db.getCollection("users").updateOne(new Document("user_id", userId),
-				new Document("$pullAll", new Document("favorite", itemIds)));
+		db.getCollection("users").updateOne(new Document("user_id", userId), new Document("$pullAll", new Document("favorite", itemIds)));
 	}
 
 	@Override
@@ -101,14 +99,15 @@ public class MongoDBConnection implements DBConnection {
 		return favoriteItems;
 	}
 
+
+
 	@Override
 	public Set<Item> getFavoriteItems(String userId) {
 		Set<String> itemIds = getFavoriteItemIds(userId);
 		Set<Item> favoriteItems = new HashSet<>();
 		for (String itemId : itemIds) {
-			FindIterable<Document> iterable = db.getCollection("Items").find(eq("item_id", itemId));
+			FindIterable<Document> iterable = db.getCollection("items").find(eq("item_id", itemId));
 			Document doc = iterable.first();
-			
 			ItemBuilder builder = new ItemBuilder();
 			builder.setItemId(doc.getString("item_id"));
 			builder.setName(doc.getString("name"));
@@ -125,19 +124,19 @@ public class MongoDBConnection implements DBConnection {
 			builder.setSnippetUrl(doc.getString("snippet_url"));
 			builder.setImageUrl(doc.getString("image_url"));
 			builder.setUrl(doc.getString("url"));
+			builder.setCategories(getCategories(itemId));
 
-			Set<String> categories = getCategories(itemId);
-			builder.setCategories(categories);
 			favoriteItems.add(builder.build());
 		}
 		return favoriteItems;
 	}
 
+
 	@Override
-	public Set<String> getCategories(String itemId) {
-		Set<String> categories = new HashSet<String>();
-		// db.users.find({user_id:1111})
-		FindIterable<Document> iterable = db.getCollection("Items").find(eq("item_id", itemId));
+	public Set<String> getCategories(String itemId) {//Student Question
+		Set<String> categories = new HashSet<>();
+		FindIterable<Document> iterable = db.getCollection("items").find(eq("item_id", itemId));
+
 		if (iterable.first().containsKey("categories")) {
 			@SuppressWarnings("unchecked")
 			List<String> list = (List<String>) iterable.first().get("categories");

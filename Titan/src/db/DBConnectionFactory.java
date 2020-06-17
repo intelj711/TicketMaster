@@ -5,8 +5,8 @@ import db.mysql.MySQLConnection;
 
 public class DBConnectionFactory {
 	// This should change based on the pipeline.
-	private static final String DEFAULT_DB = "mysql";
-	//private static final String DEFAULT_DB = "mongodb";
+	//private static final String DEFAULT_DB = "mysql";
+	private static final String DEFAULT_DB = "mongodb";
 
 	// Create a DBConnection based on given db type.
 	public static DBConnection getDBConnection(String db) {
@@ -16,7 +16,7 @@ public class DBConnectionFactory {
 			// return db.mysql.MySQLConnection.getInstance();
 		case "mongodb":
 			return MongoDBConnection.getInstance();
-			//return db.mongodb.MongoDBConnection.getInstance();
+//			return db.mongodb.MongoDBConnection.getInstance();
 		// You may try other dbs and add them here.
 		default:
 			throw new IllegalArgumentException("Invalid db " + db);

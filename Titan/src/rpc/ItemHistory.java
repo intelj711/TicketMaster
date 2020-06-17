@@ -75,6 +75,7 @@ public class ItemHistory extends HttpServlet {
 //			return;
 //		}
 		
+		
 		try {
 			JSONObject input = RpcHelper.readJsonObject(request);
 			String userId = input.getString("user_id");

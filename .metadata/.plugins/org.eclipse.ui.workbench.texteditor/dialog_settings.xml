@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="484" key="DIALOG_X_ORIGIN"/>
+		<item value="328" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="session.getAttribute(&quot;user&quot;) == null)" key="selection"/>
+		<item value="$each" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="auth"/>
-			<item value="rpc"/>
-			<item value="printw"/>
-			<item value="printwri"/>
+			<item value="save"/>
+			<item value="$each"/>
+			<item value="url"/>
+			<item value="loadNearbyItems"/>
+			<item value="a"/>
+			<item value="restau"/>
+			<item value="position"/>
+			<item value="onPositionUpdated"/>
 		</list>
 		<list key="replacehistory">
 		</list>

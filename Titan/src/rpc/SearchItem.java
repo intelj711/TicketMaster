@@ -61,13 +61,13 @@ public class SearchItem extends HttpServlet {
 		List<Item> items = conn.searchItems(userId, lat, lon, term);
 		List<JSONObject> list = new ArrayList<>();
 
-		Set<String> favorite = conn.getFavoriteItemIds(userId);
+//		Set<String> favorite = conn.getFavoriteItemIds(userId);
 		try {
 			for (Item item : items) {
 				JSONObject obj = item.toJSONObject();
-				if (favorite != null) {
-					obj.put("favorite", favorite.contains(item.getItemId()));
-				}
+//				if (favorite != null) {
+//					obj.put("favorite", favorite.contains(item.getItemId()));
+//				}
 				list.add(obj);
 			}
 		} catch (Exception e) {
