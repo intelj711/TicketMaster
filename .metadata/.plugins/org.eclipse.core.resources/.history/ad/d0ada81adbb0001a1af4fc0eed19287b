@@ -210,7 +210,6 @@
        /**
         * API #2 Load favorite (or visited) items API end point: [GET]
         * /Titan/history?user_id=1111
-        * /Titan/history?user_id=1111
         */
        function loadFavoriteItems() {
            activeBtn('fav-btn');

@@ -12,8 +12,8 @@ public class DBConnectionFactory {
 	public static DBConnection getDBConnection(String db) {
 		switch (db) {
 		case "mysql":
-			return new MySQLConnection();
-			// return db.mysql.MySQLConnection.getInstance();
+			//return new MySQLConnection();
+			 return db.mysql.MySQLConnection.getInstance();
 		case "mongodb":
 			return MongoDBConnection.getInstance();
 //			return db.mongodb.MongoDBConnection.getInstance();
